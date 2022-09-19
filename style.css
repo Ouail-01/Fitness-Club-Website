@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    color: white;
+    font-family: oswald , sans-serif;
+}
+
+.container {
+    background: linear-gradient(rgba(0, 0, 0, 0.501) , rgba(0, 0, 0, 0.524)) , url(images/By-Building_bg.jpeg);
+    
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+nav {
+    padding: 2% 6%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+     text-transform: uppercase;
+     font-size: 40px ;
+}
+
+.logo span {
+    color: orange;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: auto;
+}
+
+nav ul li{
+    margin: 0 20;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.social a {
+    margin: 0 10px;
+    
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: orange;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.social a i:hover {
+    color: orange;
+}
+
+.social a i{
+    transition: 0.5s;
+}
+
+.social a:first-child, .social a:last-child {
+    display: none;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h2 {
+    font-size: 72px;
+    text-transform: uppercase;
+}
+
+.main h1 {
+    font-size: 120px;
+    color: orange;
+    text-transform: uppercase;
+}
+
+.button {
+    text-decoration: none;
+    border: 1px solid orange;
+    border-radius: 10px;
+    margin-top: 45px;
+    padding: 15px 35px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    border-color: white;
+    color: orange;
+}
+
+@media (max-width : 900px) {
+    .social {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 40px;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid black;
+    }
+
+    .social a {
+        margin: 10px 0;
+    }
+
+    .main h2 {
+        font-size: 60px;
+    }
+
+    .main h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width : 750px) {
+    .nav-links {
+        position: absolute;
+    }
+
+    .nav-links ul {
+        position: fixed;
+        top: 0;
+        right: -250px ;
+        width: 250px;
+        height: 100vh;
+        background-color: #000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid black;
+        transition: right 0.5s;
+    }
+
+    .nav-links ul li {
+        flex-basis: 40px;
+        flex-grow: 1;
+        max-height: 80px;
+         display: flex;
+         align-items: center;
+    }
+
+    .logo {
+        text-align: center;
+        flex: 1;
+    } 
+
+    .nav-links ul.opened {
+        right: 40px;
+    }
+
+    .social a:first-child , .social a:last-child {
+        position: absolute;
+        top: 0;
+    }
+
+    .social a:last-child {
+        display: block;
+    }
+
+    ul.opened ~ .social a:first-child {
+        display: block;
+    }
+
+    ul.opened ~ .social a:last-child {
+        display: none;
+    }
+
+    .main h2 {
+        font-size: 45px
+    }
+
+    .main h1 {
+        font-size: 65px;
+    }
+}
